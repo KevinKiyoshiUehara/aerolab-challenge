@@ -25,7 +25,7 @@ body {
 }
 
 .margin-top {
-    margin-top: 7rem !important
+    margin-top: 5rem !important
 }
 
 .redeemable {
@@ -61,6 +61,9 @@ body {
     background-clip: text;
 	-webkit-text-fill-color: transparent;
     min-width: 12rem;
+        @media (max-width: 480px) {
+            min-width: 10rem;
+        }
 }
 
 .btn {

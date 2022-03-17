@@ -1,7 +1,7 @@
 <div class="container margin-top mb-5">
     <div class="navbar">
         <div class="container">
-            <div ngbDropdown class="d-inline-block">
+            <div ngbDropdown class="d-inline-block mb-3">
                 <span class="tablet-view">Filter By: </span>
                 <button class="btn category-filter-btn" id="dropdownBasic1" ngbDropdownToggle>{{ selectedCategory }}</button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -18,7 +18,7 @@
                         [ngClass]="setSelectedButtonBackground1 ? 'btn-background-selected' : 'btn-background-unselected'"
                         type="button"
                         (click)="onSortCategoryChange(sortingCategory.LowestPrice)"
-                        class="btn px-5 me-md-2 "
+                        class="btn px-5 me-md-2 sorting-button-mobile"
                     >
                             {{ sortingCategory.LowestPrice }}
                     </button>
@@ -28,7 +28,7 @@
                             [ngClass]="setSelectedButtonBackground2 ? 'btn-background-selected' : 'btn-background-unselected'"
                             type="button"
                             (click)="onSortCategoryChange(sortingCategory.HighestPrice)"
-                            class="btn px-5 me-md-2"
+                            class="btn px-5 me-md-2 sorting-button-mobile"
                         >
                                 {{ sortingCategory.HighestPrice }}
                         </button>

@@ -71,7 +71,6 @@ export class ProductsComponent implements OnInit {
   getProducts() {
     this.service.getProducts().subscribe((data: Product[]) => {
       this.items = data;
-      console.log(data);
       this.setRedeemStatus();
       this.setDropdownCategories();
       this.onSortCategoryChange(this.sortCategory);
@@ -85,7 +84,6 @@ export class ProductsComponent implements OnInit {
     this.selectedCategory = category
     if(this.selectedCategory !== 'All Products') {
       const selectedCategory = product =>  product.category === category;
-      console.log(category)
       this.service.getProducts().subscribe((data: Product[]) => {
       this.items = data.filter(selectedCategory)
       this.setRedeemStatus();
@@ -139,7 +137,6 @@ export class ProductsComponent implements OnInit {
 
   redeemProduct(itemId,itemName) {
     this.itemToRedeem.productId = itemId;
-    console.log(itemId);
     this.service.redeemItem(this.itemToRedeem).subscribe(
       responseData => {
         this.toastr.success(

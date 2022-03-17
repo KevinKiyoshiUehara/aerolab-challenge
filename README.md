@@ -12,6 +12,6 @@ npm start
 
 And that's it! 
 
-Or you can have a look at [my uploaded app!](https://nodejs.org/)
+Or you can have a look at [my uploaded app!](https://aerolab-challenge-kiyoshi.vercel.app/)
 
 ##See you around! Have a nice day 😁
