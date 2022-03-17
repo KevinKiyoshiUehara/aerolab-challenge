@@ -1,0 +1,48 @@
+@import '~material-icons/iconfont/material-icons.css';
+
+.container {
+    margin-bottom: 10rem;
+    @media (max-width: 1024px) {
+        margin-bottom: 1rem;
+        padding-bottom: 2rem !important;
+    }
+}
+
+.hero {
+    font-weight: 600;
+    color: #7C899C;
+        &.title {
+            letter-spacing: 0.3rem;     
+        }
+}
+.word-breaker {
+    word-wrap:break-word;
+}
+
+.column-reverse-tablet{
+    @media (max-width: 1024px) {
+        flex-direction: column-reverse !important;
+        text-align: center;
+    }
+}
+
+.responsive-image-swap img {
+    @media (max-width: 1024px) {
+        content: url("./../../assets/img/hero-responsive.png");
+    }
+}
+
+.btn {
+    text-transform: uppercase;
+    background: linear-gradient(146deg, rgba(40,113,235,1) 0%, rgba(203,127,242,1) 100%);
+}
+
+.material-icons {
+    vertical-align: text-top;
+}
+
+.tech-zone-tablet{
+    @media (max-width: 1024px) {
+        max-width: 20rem;
+    }
+}

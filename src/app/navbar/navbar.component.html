@@ -1,0 +1,54 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets\img\aerolab-logo-1.svg" alt="" width="80" height="30" class="d-inline-block align-text-top">
+    </a>
+    <div *ngIf="userPromiseResolved" ngbDropdown class="dropdown">
+      <button (click)="arrowSwap()" ngbDropdownToggle class="btn btn-secondary dropdown-title" type="button" id="dropdownMenuButton1" aria-expanded="false">
+        <img src="assets\img\icons\aeropay-1.svg">
+          {{ user.points }}
+        <span *ngIf="!clicked" class="material-icons md-36">keyboard_arrow_down</span>
+        <span *ngIf="clicked" class="material-icons md-36">keyboard_arrow_up</span>
+      </button>
+      <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right p-3 text-muted">
+        <p ngbDropdownItem class="add-balance">Add Balance</p>
+        <hr class="dropdown-divider">
+        <div class="position-relative aerocard p-4">
+          <div class="aerocard-pattern">
+            <div class="d-flex justify-content-between align-middle">
+              <h6 class="fw-bold">Aerocard</h6>
+              <img src="assets\img\icons\aeropay-2.svg">
+            </div>
+            <div class="d-flex justify-content-between card-name">
+              <p class="fw-bold">{{ user.name }}</p>
+            </div>
+            <div class="d-flex justify-content-between card-expiracy">
+              <p class="fw-bold">08/27</p>
+            </div>
+          </div>
+        </div>
+        <div class="container my-4">
+          <div class="row">
+            <div class="col-4 pr-3">
+              <button [ngClass]="setSelectedButtonBackground1 ? 'btn-background-selected' : 'btn-background-unselected'" type="button" (click)="selectedPoints(1000)" class="btn btn-primary btn-lg px-4 me-md-2 ">1000</button>
+            </div>
+            <div class="col-4 pr-3">
+              <button [ngClass]="setSelectedButtonBackground2 ? 'btn-background-selected' : 'btn-background-unselected'" type="button" (click)="selectedPoints(5000)" class="btn btn-primary btn-lg px-4 me-md-2">5000</button>
+            </div>
+            <div class="col-4 pr-3">
+              <button [ngClass]="setSelectedButtonBackground3 ? 'btn-background-selected' : 'btn-background-unselected'" type="button" (click)="selectedPoints(7500)" class="btn btn-primary btn-lg px-4 me-md-2">7500</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="d-flex justify-content-center pb-3 align-middle">
+            <button type="button" [disabled]="noPointsToAdd" (click)="addPoints()" class="btn btn-primary btn-lg px-4 me-md-2 btn-background-selected">
+              <img src="assets\img\icons\aeropay-3.svg">
+              Add Points
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

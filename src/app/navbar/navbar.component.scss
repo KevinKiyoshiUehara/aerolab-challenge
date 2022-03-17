@@ -1,0 +1,85 @@
+.dropdown-title {
+    font-weight: bold;
+    text-transform: uppercase;
+	background: linear-gradient(146deg, rgba(40,113,235,1) 0%, rgba(203,127,242,1) 100%);
+	-webkit-background-clip: text;
+    background-clip: text;
+	-webkit-text-fill-color: transparent;
+    vertical-align: middle;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+.material-icons {
+    vertical-align:top;
+}
+
+.add-balance {
+    font-weight: 600;
+}
+
+.aerocard {
+    height: 148px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    width: 290px;
+    z-index: -1;
+    background: #252F3D;
+    overflow: hidden;
+}
+
+.aerocard-pattern:before {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 100%;
+        top: 40%;
+        left: -30%;
+        z-index: -1;
+        background: url(./../../assets/img/single-wave-pattern.svg);
+        transform: rotate(-5deg);
+}
+
+.card-name {
+    position: absolute;
+    bottom: 0%;
+}
+
+.card-expiracy {
+    position: absolute;
+    bottom: 0%;
+    left: 78%;
+}
+
+.col-4 {
+    padding-left: 0;
+}
+
+.btn {
+    border-radius: 16px;
+}
+
+.btn-background-selected {
+    background: linear-gradient(146deg, rgba(40,113,235,1) 0%, rgba(203,127,242,1) 100%);
+}
+
+.btn-background-unselected {
+	background: linear-gradient(146deg, rgba(40,113,235,1) 0%, rgba(203,127,242,1) 100%);
+	-webkit-background-clip: text;
+    background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.btn img {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.fw-bold {
+    font-weight: bold;
+}

@@ -1,0 +1,97 @@
+.container{
+    margin-top:-11rem;
+    margin-bottom:-11rem;
+}
+
+.card-icon {
+    border-radius: 2px;
+    background: #E5F0FF;
+}
+
+.card-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px 24px 24px;
+    position: static;
+    height: 154px;
+    left: calc(50% - 508px/2);
+    top: 510px;
+    background: #FFFFFF;
+    border: 1px solid #DAE4F2;
+    box-sizing: border-box;
+    border-radius: 0px 0px 24px 24px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.card {
+    -webkit-box-shadow: 0px 0px 0px 8px #FFFFFF, 0px 0px 0px 9px #DAE4F2; 
+    box-shadow: 0px 0px 0px 8px #FFFFFF, 0px 0px 0px 9px #DAE4F2 ;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
+    
+    border: 0px;
+    width: 23rem;
+
+    &.a {
+        transform:translate(0%, 0%) rotate(-8deg);
+    }
+    
+    &.b {
+        transform:translate(0%, -10%) rotate(0deg);
+    }
+    &.c {
+        transform:translate(0%, 0%) rotate(8deg);
+    }
+
+    @media (max-width: 1024px) {
+            width: 18rem;
+        &.a {
+            transform:translate(0%, 0%) rotate(0deg);
+            .img1 {
+                content: url("./../../assets/img/walkthrough-1-responsive.png");
+            }
+        }
+        
+        &.b {
+            transform:translate(0%, 0) rotate(0deg);
+            .img2 {
+                content: url("./../../assets/img/walkthrough-2-responsive.png");
+            }
+        }
+        &.c {
+            transform:translate(0%, 0%) rotate(0deg);
+            .img3 {
+                content: url("./../../assets/img/walkthrough-3-responsive.png");
+            }
+        }
+      }
+      @media (max-width: 480px) {
+        margin-bottom: 2rem;
+        min-width: 100%;
+    }
+}
+
+.card-title {
+    font-weight: bold;
+    text-transform: uppercase;
+	background: linear-gradient(146deg, rgba(40,113,235,1) 0%, rgba(203,127,242,1) 100%);
+	-webkit-background-clip: text;
+    background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.card-image {
+    background: linear-gradient(146deg, rgba(40,113,235,0.5) 0%, rgba(203,127,242,0.5) 100%);
+    border-radius: 24px 24px 0px 0px;
+}
+
+.gradient-background {
+    background: linear-gradient(146deg, rgba(40,113,235,0.5) 0%, rgba(203,127,242,0.5) 100%);
+}

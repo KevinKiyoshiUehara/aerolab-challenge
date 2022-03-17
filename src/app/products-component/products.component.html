@@ -1,0 +1,67 @@
+<div class="container margin-top mb-5">
+    <div class="navbar">
+        <div class="container">
+            <div ngbDropdown class="d-inline-block">
+                <span class="tablet-view">Filter By: </span>
+                <button class="btn category-filter-btn" id="dropdownBasic1" ngbDropdownToggle>{{ selectedCategory }}</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <div *ngFor="let category of categories">
+                        <button (click)="onCategoryFilter(category)" ngbDropdownItem>{{ category }}</button>
+                    </div>
+                </div>
+                <div class="vr"></div>
+            </div>
+            <span class="tablet-view">Sort By:</span>
+            <div class="row">
+                <div class="col-6">
+                    <button
+                        [ngClass]="setSelectedButtonBackground1 ? 'btn-background-selected' : 'btn-background-unselected'"
+                        type="button"
+                        (click)="onSortCategoryChange(sortingCategory.LowestPrice)"
+                        class="btn px-5 me-md-2 "
+                    >
+                            {{ sortingCategory.LowestPrice }}
+                    </button>
+                </div>
+                    <div class="col-6">
+                        <button
+                            [ngClass]="setSelectedButtonBackground2 ? 'btn-background-selected' : 'btn-background-unselected'"
+                            type="button"
+                            (click)="onSortCategoryChange(sortingCategory.HighestPrice)"
+                            class="btn px-5 me-md-2"
+                        >
+                                {{ sortingCategory.HighestPrice }}
+                        </button>
+                    </div>
+            </div>
+          
+                <ngb-pagination class="pt-3" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="getData();">
+                </ngb-pagination>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div *ngFor="let item of paginateData; let i = index" class="col-md-3">
+            <div class="card h-75">
+                <img src={{item.img.url}} class="card-img-top card-image img1 border-bottom" alt="">
+                <div class="card-body card-text-box">
+                    <h5> 
+                        {{ item.name }}
+                    </h5>
+                    <p>
+                        {{ item.category }}
+                    </p>
+                </div>
+            </div>
+            <button (click)="redeemProduct(item._id, item.name)" *ngIf="item.redeemable" class="btn btn-primary my-4 w-100 redeemable">
+                <span>Redeem for <img src="assets\img\icons\aeropay-3.svg"> {{ item.cost }}</span>
+            </button>
+            <button *ngIf="!item.redeemable" disabled class="btn btn-primary my-4 w-100 unredeemable">
+                <span>You need <img src="assets\img\icons\aeropay-4.svg"> {{ item.cost - user.points }}</span>
+            </button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end my-5">
+        <ngb-pagination class="pt-3" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="getData();">
+        </ngb-pagination>
+    </div>
+</div>
