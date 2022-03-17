@@ -56,6 +56,9 @@ body {
     background: linear-gradient(146deg, rgba(40,113,235,1) 0%, rgba(203,127,242,1) 100%);
     color: #F5F9FF;
     min-width: 12rem;
+        @media (max-width: 480px) {
+            min-width: 10rem;
+        }
 }
 
 .btn-background-unselected {
